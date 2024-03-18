@@ -67,7 +67,6 @@
 
     item.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
     item.textContent = name;
-    // item.textContent = done;
 
     buttonGroup.classList.add('btn-group', 'btn-group-sm');
     doneButton.classList.add('btn', 'btn-success');
@@ -186,11 +185,13 @@
 
 
 
-// ЭТА ФУНКЦИЯ ВЫПОЛНЯЕТ ВОЗВРАТ СОХРАНЁННЫХ ДАННЫХ МАССИВА
-function loadListFromLocalStorage(key) {
-  return JSON.parse(localStorage.getItem(key));
-}
+      // ЭТА ФУНКЦИЯ ВЫПОЛНЯЕТ ВОЗВРАТ СОХРАНЁННЫХ ДАННЫХ МАССИВА
+      function loadListFromLocalStorage(key) {
+        return JSON.parse(localStorage.getItem(key));
+      }
 
+      // Загрузка данных из LocalStorage
+      todos = JSON.parse(localStorage.getItem('todos') || '[]');
 
-// ЭТОТ КОД ВЫПОЛНЯЕТ ВЫЗОВ ФУНКЦИИ ВОЗВРАТА СОХРАНЁННЫХ ДАННЫХ МАССИВА
-let loadedTodos = loadListFromLocalStorage('todos');
+      // ЭТОТ КОД ВЫПОЛНЯЕТ ВЫЗОВ ФУНКЦИИ ВОЗВРАТА СОХРАНЁННЫХ ДАННЫХ МАССИВА
+      let loadedTodos = loadListFromLocalStorage('todos');
